@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-auv!xz02pg*!!-5sz1pk7h=p3m6+3(ce*ij=93%bigf94135%1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["templates"]
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'TrackerWon.main.apps'
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
