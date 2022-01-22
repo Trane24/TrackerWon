@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.views import generic
+
+from .models import *
 
 
-def index(request):
-    """main = main.objects.all()
-    context = [
+class IndexListFiles(generic.ListView):
+    model = ListFiles
+    template_name = "templates/main/main.html"
 
-    ]"""
-    return render(request, "main/main.html", context=context)
