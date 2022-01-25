@@ -1,8 +1,8 @@
 from django.contrib import admin
 from .models import *
 
-admin.site.register(ListFiles)
-admin.site.register(CategoryLists)
-admin.site.register(CategoryGeneral)
+admin.site.register(File)
+admin.site.register(Category)
+admin.site.register(GeneralCategory)
 
 # Register your models here.
