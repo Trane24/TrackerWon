@@ -4,6 +4,6 @@ from .models import *
 
 
 class IndexListFiles(generic.ListView):
-    model = ListFiles
+    model = File
     template_name = "templates/main/main.html"
 
