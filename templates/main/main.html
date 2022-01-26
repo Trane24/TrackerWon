@@ -8,7 +8,7 @@
     <title>Hello, world!</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -48,16 +48,36 @@
         </div>
     </div>
 </nav>
-<div class="div w-25">
-    <ul class="list-group">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
-    </ul>
+
+<div class="align-top "> <!-- РОВНЯТЬ В ЦЕНТР + table w-75  -->
+    <table class="table text-warning bg-dark">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Постер</th>
+            <th scope="col">Главная категория</th>
+            <th scope="col">Категория</th>
+            <th scope="col">Название</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in file_list %}
+        <tr>
+            <th scope="row">{{ item.pk }}</th>
+            {% if item.photo %}
+                <td><img src="{{ item.photo.url }}" alt="connect" width="50"></td>
+            {% else %}
+                <td><img src="https://picsum.photos/id/1060/200/300/?blur=2" alt="connect" width="50"></td>
+            {% endif %}
+            <td>{{ item.title }}</td>
+            <td>{{ item.category.general_category }}</td>
+            <td>{{ item.category }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 </div>
-<div class="div fixed-bottom float-right">
+<div class="div position-absolute bottom-0 end-0">
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             <li class="page-item"><a class="page-link" href="#">Previous</a></li>
