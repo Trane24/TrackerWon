@@ -8,7 +8,7 @@ class File(models.Model):
     file = models.FileField("Фаил", upload_to="file/%Y/%m/%d", blank=True)
     date_published = models.DateTimeField("Дата публикации", auto_now_add=True)
     date_updated = models.DateTimeField("Обновление", auto_now=True)
-    is_published = models.BooleanField(default=True)
+    is_published = models.BooleanField("Публикация", default=True)
     category = models.ForeignKey(
         "Category",
         on_delete=models.PROTECT,
