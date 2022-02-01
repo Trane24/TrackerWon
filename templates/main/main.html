@@ -5,12 +5,11 @@
             <th scope="col">ID</th>
             <th scope="col">Постер</th>
             <th scope="col">Название</th>
-            <th scope="col">Главная Категория</th>
             <th scope="col">Категория</th>
             <th scope="col">Дата загрузки</th>
 {% endblock %}
 {% block content %}
-        {% for item in file_list %}
+        {% for item in file %}
         <tr>
             <th scope="row">{{ item.pk }}</th>
             {% if item.photo %}
@@ -19,7 +18,6 @@
                 <td><img src="https://picsum.photos/id/1060/200/300/?blur=2" alt="connect" width="50"></td>
             {% endif %}
             <td>{{ item.title }}</td>
-            <td>{{ item.category.general_category }}</td>
             <td>{{ item.category }}</td>
             <td>{{ item.date_published }}</td>
         </tr>

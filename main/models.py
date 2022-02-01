@@ -27,12 +27,7 @@ class File(models.Model):
 
 class Category(models.Model):
     title = models.CharField("Название категории", max_length=50)
-    general_category = models.ForeignKey(
-        "GeneralCategory",
-        on_delete=models.PROTECT,
-        related_name="category_list",
-        verbose_name="Главные категории",
-    )
+    slug = models.SlugField()
 
     def __str__(self):
         return self.title
@@ -40,16 +35,4 @@ class Category(models.Model):
     class Meta:
         verbose_name = "Категория"
         verbose_name_plural = "Категории"
-        ordering = ["general_category"]
-
-
-class GeneralCategory(models.Model):
-    title = models.CharField("Главная категория", max_length=50)
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name = "Главная категория"
-        verbose_name_plural = "Главные категории"
         ordering = ["title"]

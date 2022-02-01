@@ -3,7 +3,7 @@ from .models import *
 
 
 @admin.register(File)
-class FileAdmin(admin.ModelAdmin):  # Разобраться с генеральной категорией
+class FileAdmin(admin.ModelAdmin):
     list_display = (
         "pk",
         "title",
@@ -18,9 +18,4 @@ class FileAdmin(admin.ModelAdmin):  # Разобраться с генераль
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ("pk", "general_category", "title")
-
-
-@admin.register(GeneralCategory)
-class GeneralCategoryAdmin(admin.ModelAdmin):
     list_display = ("pk", "title")
