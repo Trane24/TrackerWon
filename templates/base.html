@@ -15,22 +15,22 @@
     <table class="table text-warning bg-dark">
         <thead>
         <tr>
-            {% block content_name %}content_name{% endblock %}
+            {% block content_name %}{% endblock %}
         </tr>
         </thead>
         <tbody>
-        {% block content %}Content{% endblock %}
+        {% block content %}{% endblock %}
         </tbody>
     </table>
 </div>
 <div class="div position-absolute bottom-0 end-0">
     <nav aria-label="Page navigation example">
         <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#"><-</a></li>
             <li class="page-item"><a class="page-link" href="#">1</a></li>
             <li class="page-item"><a class="page-link" href="#">2</a></li>
             <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            <li class="page-item"><a class="page-link" href="#">-></a></li>
         </ul>
     </nav>
 </div>

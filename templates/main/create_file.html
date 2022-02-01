@@ -1,0 +1,8 @@
+{% include "inc/_nav.html" %} <!-- NAVBAR -->
+
+<form action="{% url "create_file" %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Добавить</button>
+
+</form>

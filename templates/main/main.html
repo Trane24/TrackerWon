@@ -1,15 +1,15 @@
-{% extends "base.html"%}
+{% extends "base.html" %}
 
 {% block title %} TrackerWon {% endblock %}
 {% block content_name %}
-            <th scope="col">ID</th>
-            <th scope="col">Постер</th>
-            <th scope="col">Название</th>
-            <th scope="col">Категория</th>
-            <th scope="col">Дата загрузки</th>
+    <th scope="col">ID</th>
+    <th scope="col">Постер</th>
+    <th scope="col">Название</th>
+    <th scope="col">Категория</th>
+    <th scope="col">Дата загрузки</th>
 {% endblock %}
 {% block content %}
-        {% for item in file %}
+    {% for item in file %}
         <tr>
             <th scope="row">{{ item.pk }}</th>
             {% if item.photo %}
@@ -17,9 +17,13 @@
             {% else %}
                 <td><img src="https://picsum.photos/id/1060/200/300/?blur=2" alt="connect" width="50"></td>
             {% endif %}
-            <td>{{ item.title }}</td>
+            <td>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'file' %}">{{ item.title }}</a>
+                </li>
+            </td>
             <td>{{ item.category }}</td>
             <td>{{ item.date_published }}</td>
         </tr>
-        {% endfor %}
+    {% endfor %}
 {% endblock %}
