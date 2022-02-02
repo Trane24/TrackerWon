@@ -19,7 +19,7 @@
             {% endif %}
             <td>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'file' %}">{{ item.title }}</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'file' item.category.slug item.pk %}">{{ item.title }}</a>
                 </li>
             </td>
             <td>{{ item.category }}</td>
