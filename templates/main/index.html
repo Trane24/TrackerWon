@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="align-top "> <!-- РОВНЯТЬ В ЦЕНТР + table w-75  -->
+        <table class="table text-warning bg-dark">
+            <thead>
+            <tr>
+                {% block content_name %}{% endblock %}
+            </tr>
+            </thead>
+            <tbody>
+            {% block content %}{% endblock %}
+            </tbody>
+        </table>
+    </div>
+    <div class="div position-absolute bottom-0 end-0">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#"><-</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">-></a></li>
+            </ul>
+        </nav>
+    </div>
+
+{% endblock %}

@@ -1,13 +1,15 @@
-{% include "inc/_nav.html" %} <!-- NAVBAR -->
+{% extends "base.html" %}
 
 
-<h1>{{ file.title }}</h1>
-<h3>{{ file.category }}</h3>
-Дата создания: {{ file.date_published }}
-Дата обновления: {{ file.date_updated }}
-{% if item.photo %}
-    <td><img src="{{ file.photo.url }}" alt="connect" width="50"></td>
-{% else %}
-    <td><img src="https://picsum.photos/id/1060/200/300/?blur=2" alt="connect" width="50"></td>
-{% endif %}
-{{ file.context }}
+{% block content %}
+    <h1>{{ file.title }}</h1>
+    <h3>{{ file.category }}</h3>
+    Дата создания: {{ file.date_published }}
+    Дата обновления: {{ file.date_updated }}
+    {% if item.photo %}
+        <td><img src="{{ file.photo.url }}" alt="connect" width="50"></td>
+    {% else %}
+        <td><img src="https://picsum.photos/id/1060/200/300/?blur=2" alt="connect" width="50"></td>
+    {% endif %}
+    {{ file.context }}
+{% endblock %}

@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class File(models.Model):
@@ -15,6 +16,9 @@ class File(models.Model):
         related_name="file_list",
         verbose_name="Категории",
     )
+
+    def get_absolute_url(self):
+        return reverse("file", kwargs={"slug": self.category.slug, "file_id": self.pk})
 
     def __str__(self):
         return self.title

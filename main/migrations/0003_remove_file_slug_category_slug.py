@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main', '0002_file_slug'),
+        ("main", "0002_file_slug"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='file',
-            name='slug',
+            model_name="file",
+            name="slug",
         ),
         migrations.AddField(
-            model_name='category',
-            name='slug',
-            field=models.SlugField(default='sdgsdg'),
+            model_name="category",
+            name="slug",
+            field=models.SlugField(default="sdgsdg"),
             preserve_default=False,
         ),
     ]

@@ -1,8 +1,13 @@
-{% include "inc/_nav.html" %} <!-- NAVBAR -->
+{% extends "base.html" %}
 
-<form action="{% url "create_file" %}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Добавить</button>
+{% block content %}
 
-</form>
+
+    <form action="{% url "create_file" %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Добавить</button>
+
+    </form>
+
+{% endblock %}

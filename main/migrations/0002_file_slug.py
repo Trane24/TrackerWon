@@ -6,14 +6,14 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main', '0001_initial'),
+        ("main", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='file',
-            name='slug',
-            field=models.SlugField(default='tttt'),
+            model_name="file",
+            name="slug",
+            field=models.SlugField(default="tttt"),
             preserve_default=False,
         ),
     ]
