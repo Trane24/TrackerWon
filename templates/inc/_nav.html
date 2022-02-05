@@ -23,13 +23,21 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'create_file' %}">Добавить</a>
                 </li>
-                <li class="nav-item position-absolute top-0 end-0 ">
-                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Войти</a>
-                </li>
-                <li class="nav-item position-absolute top-0 end-0 me-auto">
-                    <a class="nav-link active" aria-current="page" href="{% url 'register' %}">Регистрация</a>
-                </li>
-
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'main' %}">{{ user.username }}</a>
+                    </li><h4>|</h4>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Выйти</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Войти</a>
+                    </li><h4>|</h4>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'register' %}">Регистрация</a>
+                    </li>
+                {% endif %}
         </div>
     </div>
 </nav>
