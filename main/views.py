@@ -14,13 +14,15 @@ class IndexFile(generic.ListView):
     template_name = "main/main.html"
     context_object_name = "file"
     queryset = File.objects.filter(is_published=True)
-    paginate_by = 2
+    paginate_by = 10
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(IndexFile, self).get_context_data(**kwargs)
         context["category_list"] = Category.objects.all()
         return context
 
+    def get_queryset(self):
+        return File.objects.filter(is_published=True).select_related("category")
 
 class FileByCategory(generic.ListView):
     template_name = "main/main.html"
@@ -33,7 +35,7 @@ class FileByCategory(generic.ListView):
 
     def get_queryset(self):
         slug = self.kwargs["slug"]
-        return File.objects.filter(category__slug=slug, is_published=True)
+        return File.objects.filter(category__slug=slug, is_published=True).select_related("category")
 
 
 class ShowFile(generic.DetailView):
